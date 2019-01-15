@@ -24,7 +24,7 @@ Jwt-Security的演示Demo
 ## 资源列表
 * localhost:8080/    `主页，都可访问`
 * localhost:8080/auth/login   `登录页面，都可访问`
-* localhost:8080/user/info    `用户登录后均可访问，即需要`account_users_info`权限`
+* localhost:8080/user/info    `用户登录后均可访问，即需要 account_users_info 权限`
 * localhost:8080/admin/create   `添加用户页面，admin登录后可访问，即需要 account_users_create 权限`
 
 
