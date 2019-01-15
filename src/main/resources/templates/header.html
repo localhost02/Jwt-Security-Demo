@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="nav">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="margin: 0; border: 0">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+                <div class="navbar-form navbar-right">
+                    <!-- TODO 正常情况下，个人中心和登录应由前端获取Authorization来判定！-->
+                    <a class="btn btn-success" th:href="@{/user/info}" th:if="${#httpServletRequest.getSession().getAttribute('isAdmin')}">个人中心</a>
+                    <a class="btn btn-danger" th:href="@{/admin/create}" th:if="${#httpServletRequest.getSession().getAttribute('isAdmin')}">创建用户[管理员]</a>
+                    <a class="btn btn-success" th:href="@{/auth/login}" th:unless="${#httpServletRequest.getSession().getAttribute('isAdmin')}">登录</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>
